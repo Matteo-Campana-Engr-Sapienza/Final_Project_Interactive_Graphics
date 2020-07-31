@@ -1,7 +1,6 @@
 # Final_Project_Interactive_Graphics
 
 # Author 
-
 ## Campana Matteo
 
 This is a survival horror game:
@@ -10,7 +9,7 @@ This is a survival horror game:
 - Escape from the forest
 
 
-# Commands
+# Controls
 
 - WASD to move
 - LSHIFT to run
