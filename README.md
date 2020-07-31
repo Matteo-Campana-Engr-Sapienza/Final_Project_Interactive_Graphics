@@ -1,4 +1,4 @@
-# Final_Project_Interactive_Graphics
+# Final Project Interactive Graphics
 
 # Author 
 ## Campana Matteo
