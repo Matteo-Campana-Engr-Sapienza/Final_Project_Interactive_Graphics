@@ -1,8 +1,8 @@
 # Final_Project_Interactive_Graphics
 
-#Author 
+# Author 
 
-###Campana Matteo
+## Campana Matteo
 
 This is a survival horror game:
 - Collect all the pages
@@ -10,7 +10,7 @@ This is a survival horror game:
 - Escape from the forest
 
 
-#Commands
+# Commands
 
 - WASD to move
 - LSHIFT to run
