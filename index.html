@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>BabylonJS First Try</title>
+
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #renderCanvas {
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    #fps {
+      position: absolute;
+      border-radius: 1px solid #ccc;
+      text-align: center;
+      font-size: 18px;
+      color: #ccc;
+      top: 15px;
+      right: 10px;
+      width: 60px;
+      height: 20px;
+
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-behavior: smooth;
+      background: #131313;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    h1 a {
+      font-size: 80px;
+      color: #ccc;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .popover {
+      display: none;
+      box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
+    }
+
+    .popover:target {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popover .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 0;
+      height: 0;
+      color: #fff;
+      background-color: #191919;
+      animation: 1s grow ease forwards;
+      text-align: center;
+    }
+
+    .nav_list {
+      list-style-type: none;
+    }
+
+    .nav_list a {
+      text-decoration: none;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .nav_list_item {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .nav_list li {
+      padding: 15px 0;
+      text-transform: uppercase;
+      transform: translateY(200px);
+      opacity: 0;
+      animation: 2s slideUp ease forwards .5s;
+      position: relative;
+    }
+
+    .nav_list li::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 0px;
+      left: 0;
+      bottom: 10px;
+      background: #ccc;
+      transition: all .5s ease;
+    }
+
+    .nav_list li:hover:before {
+      width: 100%;
+    }
+
+    .popover p {
+      padding: 50px;
+      opacity: 0;
+      animation: 1s fadeIn ease forwards 1s;
+    }
+
+    .popover .close::after {
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      display: flex;
+      z-index: 1;
+      font-size: 30px;
+      align-items: center;
+      justify-content: center;
+      background-color: #ccc;
+      color: #fff;
+      content: "×";
+      cursor: pointer;
+      opacity: 0;
+      animation: 1s fadeIn ease forwards .5s;
+    }
+
+    @keyframes grow {
+      100% {
+        height: 90%;
+        width: 90%;
+      }
+    }
+
+    @keyframes fadeIn {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    #page-counter {
+      display: inline;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      color: #ccc;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      border-radius: 1px solid #ccc;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    #player-message {
+      display: inline;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      color: #ccc;
+      position: fixed;
+      width: 70%;
+      border-radius: 1px solid #ccc;
+      font-size: 14px;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+    }
+
+  </style>
+  <script src="https://preview.babylonjs.com/babylon.js"></script>
+  <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+  <script src="game_version_2.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+  <div id="page-counter">
+    COLLECTED PAGES : 0
+  </div>
+
+  <div id="player-message">
+  </div>
+
+  <div id="my-menu">
+  </div>
+
+
+
+
+  <div id="fps">0</div>
+  <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+
+
+</body>
+
+</html>
