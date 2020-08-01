@@ -15,3 +15,7 @@ This is a survival horror game:
 - LSHIFT to run
 - LCLICK to pick up pages
 - ESC to menu
+
+
+## Link to the game
+[GAME](https://matteo-campana-engr-sapienza.github.io/Final_Project_Interactive_Graphics)
